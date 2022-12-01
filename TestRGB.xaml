@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RizkyApps.TestRGB"
+             Title="TestRGB">
+    <ContentPage.Resources>
+        <Color x:Key="colWarna1">Red</Color>
+        <Color x:Key="colWarna2">Green</Color>
+        <Color x:Key="colWarna3">Blue</Color>
+        <Color x:Key="colWarna4">Orange</Color>
+        <Color x:Key="colWarna5">Gray</Color>
+    </ContentPage.Resources>
+
+    <!--<object Margin="left,top,right,bottom"/>-->  
+    
+    <Grid x:Name="warnaBelakang" BackgroundColor="Black">
+        <Frame Margin="10,0,10,0" VerticalOptions="Center">
+            <VerticalStackLayout>
+                <Label
+                    Text="Welcome to .NET MAUI Change RGB"
+                    FontSize="16"
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="Center"/>
+                <Label Text="Red Value : " Margin="10,15,0,0"/>
+                <Slider x:Name="sldr1"
+                        MaximumTrackColor="{StaticResource colWarna4}"
+                        MinimumTrackColor="{StaticResource colWarna5}"
+                        ThumbColor="{StaticResource colWarna1}"
+                        Minimum="1"
+                        Maximum="255"
+                        ValueChanged="sldr1_ValueChanged"
+                        />
+                <Label Text="Green Value : " Margin="10,0,0,0"/>
+                <Slider x:Name="sldr2"
+                        MaximumTrackColor="{StaticResource colWarna4}"
+                        MinimumTrackColor="{StaticResource colWarna5}"
+                        ThumbColor="{StaticResource colWarna2}"
+                        Minimum="1"
+                        Maximum="255"
+                        ValueChanged="sldr2_ValueChanged"
+                        />
+                <Label Text="Blue Value : " Margin="10,0,0,0"/>
+                <Slider x:Name="sldr3" 
+                        MaximumTrackColor="{StaticResource colWarna4}"
+                        MinimumTrackColor="{StaticResource colWarna5}"
+                        ThumbColor="{StaticResource colWarna3}"
+                        Minimum="1"
+                        Maximum="255"
+                        ValueChanged="sldr3_ValueChanged"
+                        />
+                <Frame HorizontalOptions="Center" CornerRadius="25" Margin="0,0,10,10" MinimumWidthRequest="100">
+                    <HorizontalStackLayout>
+                        <Label x:Name="lblHex" Margin="0,0,10,0"
+                               HorizontalTextAlignment="End"
+                               Text="Value :          "
+                               VerticalOptions="Center"/>
+                        <ImageButton  
+                                     HeightRequest="25"
+                                     WidthRequest="25"
+                                     HorizontalOptions="End"
+                                     Source="copy.svg"
+                            Clicked="ImageButton_Clicked"/>
+                    </HorizontalStackLayout>
+                </Frame>
+                <Button x:Name="btnGen"
+                        Text="Generate Color"
+                        BackgroundColor="{StaticResource colWarna4}"
+                        VerticalOptions="Center"
+                        Clicked="btnGen_Clicked"/>
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
+
+
+</ContentPage>
