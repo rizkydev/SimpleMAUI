@@ -8,10 +8,13 @@ public partial class App : Application
 
 		//MainPage = new MainPage();
 
-		//=================
+		//================= Test Navigasi
 		//MainPage = new NavigationPage( new TestBaru());
 
-        //=================
-        MainPage = new TestRGB();
+        //================= Test Ganti Warna
+        //MainPage = new TestRGB();
+
+        //================= Test Angka Angka
+        MainPage = new TestNumberPayment();
     }
 }
