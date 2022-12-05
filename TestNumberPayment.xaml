@@ -36,7 +36,7 @@
                        TextColor="{StaticResource BlueColor}"/>
                 <Label x:Name="lblTotal"
                        Grid.Row="1" Grid.Column="0"
-                       FontSize="35"
+                       FontSize="25"
                        FontAttributes="Bold"
                        HorizontalTextAlignment="Center"
                        VerticalOptions="CenterAndExpand"
@@ -76,26 +76,28 @@
                    Keyboard="Numeric"
                    Placeholder="0"
                    TextColor="{StaticResource LightColor}"
-                   VerticalOptions="Center">                
+                   VerticalOptions="Center"
+                   Completed="txtAmount_Completed">                
             </Entry>
-            <Label Grid.Row="1" Text="Input Amount : " HorizontalTextAlignment="End" TextColor="{StaticResource BlueColor}" VerticalOptions="CenterAndExpand"></Label>
+            <Label Grid.Row="1" Text="Input Tip : " HorizontalTextAlignment="End" TextColor="{StaticResource BlueColor}" VerticalOptions="CenterAndExpand"></Label>
             <HorizontalStackLayout Grid.Row="1" Grid.Column="1"
                                    Margin="5,0,0,0"
                                    HeightRequest="70"
                                    HorizontalOptions="CenterAndExpand"
                                    Spacing="10">
-                <Button Text="10%" WidthRequest="70" />
-                <Button Text="15%" WidthRequest="70" />
-                <Button Text="20%" WidthRequest="70" />
+                <Button x:Name="btnTip10" Text="10%" WidthRequest="70" Clicked="btnTip10_Clicked"/>
+                <Button x:Name="btnTip15" Text="15%" WidthRequest="70" Clicked="btnTip15_Clicked"/>
+                <Button x:Name="btnTip20" Text="20%" WidthRequest="70" Clicked="btnTip20_Clicked"/>
             </HorizontalStackLayout>
-            <Label Grid.Row="2" Text="Choose Tip : " HorizontalTextAlignment="End" TextColor="{StaticResource BlueColor}" VerticalOptions="CenterAndExpand"></Label>
+            <Label x:Name="lblSldTip" Grid.Row="2" Text="Choose Tip : " HorizontalTextAlignment="End" TextColor="{StaticResource BlueColor}" VerticalOptions="CenterAndExpand"></Label>
             <Slider Grid.Row="2" Grid.Column="1"
                     x:Name="sldTip"
                     Maximum="50"
                     Minimum="0"
                     MaximumTrackColor="{StaticResource LightColor}"
                     MinimumTrackColor="{StaticResource BlueColor}"
-                    ThumbColor="{StaticResource BlueColor}">                
+                    ThumbColor="{StaticResource BlueColor}"
+                    ValueChanged="sldTip_ValueChanged">                
             </Slider>
             <Label Grid.Row="3" Text="Choose Split : " HorizontalTextAlignment="End" TextColor="{StaticResource BlueColor}" VerticalOptions="CenterAndExpand"></Label>
             <HorizontalStackLayout Grid.Row="3" Grid.Column="1"
@@ -103,15 +105,16 @@
                                    HeightRequest="50"
                                    HorizontalOptions="Center"
                                    VerticalOptions="Center">
-                <Button x:Name="btnMinus" Text="-" WidthRequest="50" />
+                <Button x:Name="btnMinus" Text="-" WidthRequest="50" Clicked="btnMinus_Clicked" />
                 <Label x:Name="lblTotalSplit"
                        BackgroundColor="{StaticResource SectionColor}"
                        FontSize="20"
                        WidthRequest="70"
                        Text="1"
                        TextColor="{StaticResource LightColor}"
-                       VerticalTextAlignment="Center"/>
-                <Button x:Name="btnPlus" Text="+" WidthRequest="50" />
+                       VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Center"/>
+                <Button x:Name="btnPlus" Text="+" WidthRequest="50" Clicked="btnPlus_Clicked" />
             </HorizontalStackLayout>
         </Grid>
     </Grid>
