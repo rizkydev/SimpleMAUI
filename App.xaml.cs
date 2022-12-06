@@ -15,6 +15,9 @@ public partial class App : Application
         //MainPage = new TestRGB();
 
         //================= Test Angka Angka
-        MainPage = new TestNumberPayment();
+        //MainPage = new TestNumberPayment();
+
+        //================= Test Generate Quotes
+        MainPage = new TestGenerateQuotes();
     }
 }

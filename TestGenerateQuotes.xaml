@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RizkyApps.TestGenerateQuotes"
+             Title="TestGenerateQuotes">
+    <Grid BackgroundColor="DimGrey" x:Name="GridBackColor">
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <!--<LinearGradientBrush StartPoint="0,0" EndPoint="0,1">-->
+            <!--<LinearGradientBrush StartPoint="0,1" EndPoint="1,0">-->
+            <!--<LinearGradientBrush StartPoint="0,1" EndPoint="1,1">-->
+                <GradientStopCollection>
+                    <GradientStop Offset="0" Color="LightSkyBlue"></GradientStop>
+                    <GradientStop Offset="0.5" Color="LightPink"></GradientStop>
+                    <GradientStop Offset="1" Color="LightGreen"></GradientStop>
+                </GradientStopCollection>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid Margin="25" RowDefinitions="80*,20*">
+            <Label x:Name="lblQuotes"
+                   FontSize="Large"
+                   HorizontalTextAlignment="Center"
+                   Text="Never Go Back - Rizky"
+                   TextColor="Black"
+                   VerticalOptions="Center"
+                   FontAttributes="Bold"
+                   FontFamily="BisonFont">
+            </Label>
+            <Button x:Name="btnGenerate"
+                    Grid.Row="1"
+                    BackgroundColor="WhiteSmoke"
+                    Opacity=".4"
+                    Text="Generate New Quotes"
+                    TextColor="Black"
+                    Clicked="btnGenerate_Clicked">                
+            </Button>
+        </Grid>        
+    </Grid>
+</ContentPage>

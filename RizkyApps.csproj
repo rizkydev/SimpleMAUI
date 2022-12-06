@@ -58,15 +58,21 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Fonts\Bison.ttf" />
 	  <None Remove="Resources\Images\copy.svg" />
+	  <None Remove="Resources\Raw\quotes.txt" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="ColorUtility" Version="1.0.0" />
 	  <PackageReference Include="CommunityToolkit.Maui" Version="2.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <MauiXaml Update="TestBaru.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="TestGenerateQuotes.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="TestNumberPayment.xaml">
