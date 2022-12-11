@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Models="clr-namespace:RizkyApps.Models"
+             x:Class="RizkyApps.TestBinding"
+             Title="TestBinding">
+    <!--xmlns:Models="clr-namespace:RizkyApps.Models untuk binding dari xaml, sama seperti using di C#-->
+    <ContentPage.Resources>
+        <Models:Customer x:Key="person"
+                         Id="1"
+                         Name="Adit"
+                         Address="Indo"
+                         Birthday="2022-01-18"
+                         Notes="Test Aja">            
+        </Models:Customer>
+    </ContentPage.Resources>
+    <ScrollView>
+        <VerticalStackLayout>
+            <Label 
+            Text="Test Binding Data"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+            <!--awal muncul dari ContentPage.Resources-->
+            <Label x:Name="txtName"
+               Text="{Binding Name, Source={StaticResource person}}"
+               VerticalOptions="Center" 
+               HorizontalOptions="Center" />
+
+            <Label x:Name="txtName2"
+               Text="{Binding Name}"
+               VerticalOptions="Center" 
+               HorizontalOptions="Center" />
+
+            <Button
+                x:Name="btnEnter"
+                Text="Click me"
+                SemanticProperties.Hint="Clik to MainPage"
+                Clicked="btnEnter_Clicked"
+                HorizontalOptions="Center" />
+
+            <Line></Line>
+
+            <Label x:Name="lblMuter"
+               Text="Coba berputar"
+               VerticalOptions="Center" 
+               HorizontalOptions="Center" 
+               Rotation="{Binding Source={x:Reference sldMuter}, Path=Value}"/>
+            <Slider x:Name="sldMuter"
+                MinimumTrackColor="Aqua"
+                Maximum="360"
+                Minimum="0"
+                Value="0"></Slider>
+        </VerticalStackLayout>
+    </ScrollView>    
+</ContentPage>

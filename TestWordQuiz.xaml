@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RizkyApps.TestWordQuiz"
+             Title="TestWordQuiz">
+    <Grid RowDefinitions="60*, 40*">
+        <VerticalStackLayout Spacing="12">
+            <Label x:Name="lblErrorTotal"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   Text="Error 0 of 10"></Label>
+            <Label FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   FontSize="Large"
+                   Text="{Binding Spotlight}"></Label>
+            <Label x:Name="lblNotifMsg"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="Green"
+                   Text="{Binding NotifMsg}"></Label>
+            <Button x:Name="btnReset" Text="Restart" WidthRequest="120" Clicked="btnReset_Clicked" IsVisible="false"/>
+        </VerticalStackLayout>
+        <FlexLayout Grid.Row="1" Wrap="Wrap" JustifyContent="SpaceEvenly" BindableLayout.ItemsSource="{Binding Letters}" x:Name="LettersContainer">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <Button HeightRequest="50" WidthRequest="50" Text="{Binding .}"
+                            Clicked="Button_Clicked"/>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </FlexLayout>
+    </Grid>
+</ContentPage>

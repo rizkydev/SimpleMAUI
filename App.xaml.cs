@@ -18,6 +18,13 @@ public partial class App : Application
         //MainPage = new TestNumberPayment();
 
         //================= Test Generate Quotes
-        MainPage = new TestGenerateQuotes();
+        //MainPage = new TestGenerateQuotes();
+
+        //================= Test Binding Data
+        //MainPage = new TestBinding();
+
+        //================= Test Word Quiz
+        MainPage = new TestWordQuiz();
+
     }
 }
