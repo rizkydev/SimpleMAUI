@@ -1,4 +1,6 @@
-﻿namespace RizkyApps;
+﻿using RizkyApps.Views;
+
+namespace RizkyApps;
 
 public partial class App : Application
 {
@@ -24,7 +26,10 @@ public partial class App : Application
         //MainPage = new TestBinding();
 
         //================= Test Word Quiz
-        MainPage = new TestWordQuiz();
+        //MainPage = new TestWordQuiz();
+
+        //================= Test Model View ViewModel (MVVM)
+        MainPage = new TestMVVM();
 
     }
 }

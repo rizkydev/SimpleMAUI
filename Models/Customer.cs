@@ -1,17 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PropertyChanged;
 
 namespace RizkyApps.Models
 {
-    internal class Customer
+    [AddINotifyPropertyChangedInterface]
+    internal class Customer 
     {
         public double Id { get; set; }
         public string Name { get; set; }    
-        public string Address { get; set; }
+        public string Address { get ; set; }
+        public bool IsMarried { get; set; }
         public DateTime Birthday { get; set; }
         public string Notes { get; set; }
+        public int Rate { get; set; }
+        public string Recommended { get; set; }
     }
 }

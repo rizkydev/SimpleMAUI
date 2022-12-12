@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters ="clr-namespace:RizkyApps.Jobs"
+             x:Class="RizkyApps.Views.TestMVVM"
+             Title="TestMVVM">
+    <ContentPage.Resources>
+        <converters:BoolConverter x:Key="boolConv"></converters:BoolConverter>
+    </ContentPage.Resources>
+    <VerticalStackLayout>
+        <Label 
+            Text="{Binding CustomerData.Name}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            FontSize="Large"/>
+        <Slider Maximum="100" Minimum="0" Value="{Binding CustomerData.Rate}"></Slider>
+        <Switch IsToggled="{Binding CustomerData.IsMarried}"/>
+        <DatePicker x:Name="dpBirthday" Date="{Binding CustomerData.Birthday}"/>
+        <Entry Text="{Binding CustomerData.Notes}"/>
+        <CheckBox IsChecked="{Binding CustomerData.Recommended, Converter={StaticResource boolConv}}"/>
+        <Button x:Name="btnShow" Command="{Binding ClickCommandShow}" WidthRequest="100" Text="Test Click"/>
+        <!--cara ke satu lempar parameter dengan nama controller-->
+        <!--<Button x:Name="btnShow2" Command="{Binding ClickCommandShow2}" CommandParameter="{Binding Source = {x:Reference dpBirthday}, Path=Date}" WidthRequest="100" Text="Test Click 2"/>-->
+        <!--cara ke satu lempar parameter dengan Bindingnya, menggunakan nuget PropertyChanged.Fody-->
+        <Button x:Name="btnShow2" Command="{Binding ClickCommandShow2}" CommandParameter="{Binding CustomerData.Birthday}" WidthRequest="100" Text="Test Click 2"/>
+    </VerticalStackLayout>
+</ContentPage>
