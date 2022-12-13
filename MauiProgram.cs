@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Maui;
+﻿using Syncfusion.Maui.Core.Hosting;
+using CommunityToolkit.Maui;
 namespace RizkyApps;
 
 public static class MauiProgram
@@ -12,6 +13,7 @@ public static class MauiProgram
 
         builder
 			.UseMauiApp<App>()
+			.ConfigureSyncfusionCore()
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

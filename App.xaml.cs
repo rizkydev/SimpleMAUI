@@ -8,10 +8,10 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		//MainPage = new MainPage();
+        //MainPage = new MainPage();
 
-		//================= Test Navigasi
-		//MainPage = new NavigationPage( new TestBaru());
+        //================= Test Navigasi
+        //MainPage = new NavigationPage( new TestBaru());
 
         //================= Test Ganti Warna
         //MainPage = new TestRGB();
@@ -29,7 +29,9 @@ public partial class App : Application
         //MainPage = new TestWordQuiz();
 
         //================= Test Model View ViewModel (MVVM)
-        MainPage = new TestMVVM();
+        //MainPage = new TestMVVM();
 
+        //================= Test BMI Calculator
+        MainPage = new TestBMICalculator();
     }
 }
