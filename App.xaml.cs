@@ -1,5 +1,5 @@
 ﻿using RizkyApps.Views;
-
+using RizkyApps.TestNavigation;
 namespace RizkyApps;
 
 public partial class App : Application
@@ -10,7 +10,7 @@ public partial class App : Application
 
         //MainPage = new MainPage();
 
-        //================= Test Navigasi
+        //================= Test Navigation 1
         //MainPage = new NavigationPage( new TestBaru());
 
         //================= Test Ganti Warna
@@ -32,6 +32,9 @@ public partial class App : Application
         //MainPage = new TestMVVM();
 
         //================= Test BMI Calculator
-        MainPage = new TestBMICalculator();
+        //MainPage = new TestBMICalculator();
+
+        //================= Test Navigation 2
+        MainPage = new NavigationPage(new TestLoginPageNav());
     }
 }

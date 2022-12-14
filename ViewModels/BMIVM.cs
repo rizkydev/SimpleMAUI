@@ -11,6 +11,7 @@ namespace RizkyApps.ViewModels
             BMI = new BMIEntity();
             BMI.Height = 180;
             BMI.Weight = 73;
+            BMI.Notes = "Test Data";
         }
     }
 }

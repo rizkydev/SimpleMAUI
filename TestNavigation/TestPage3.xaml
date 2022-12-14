@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RizkyApps.TestNavigation.TestPage3"
+             Title="TestPage3">
+    <NavigationPage.TitleView>
+        <Frame Margin="10" Padding="0" CornerRadius="0">
+            <SearchBar Placeholder="Search View"/>
+        </Frame>
+    </NavigationPage.TitleView>
+    <VerticalStackLayout>
+        <Label 
+            Text="{Binding BMI.Notes}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Button
+                x:Name="CounterBtn"
+                Text="Click me"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center" />
+        <Button
+                x:Name="btnForward"
+                Text="Go To Page 2 (New)"
+                Clicked="btnForward_Clicked"
+                HorizontalOptions="Center" />
+        <Button
+                x:Name="btnBack"
+                Text="Back To Page 2"
+                Clicked="btnBack_Clicked"
+                HorizontalOptions="Center" />
+        <Button
+                x:Name="btnRoot"
+                Text="Back To Page 1 (Root)"
+                Clicked="btnRoot_Clicked"
+                HorizontalOptions="Center" />
+        <Button
+                x:Name="btnLogOut"
+                Text="Back To Login (Logout)"
+                Clicked="btnLogOut_Clicked"
+                HorizontalOptions="Center" />
+    </VerticalStackLayout>
+</ContentPage>

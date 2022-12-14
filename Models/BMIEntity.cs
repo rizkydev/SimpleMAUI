@@ -59,5 +59,7 @@ namespace RizkyApps.Models
 
             }
         }
+
+        public string Notes { get; set; }
     }
 }
