@@ -35,6 +35,9 @@ public partial class App : Application
         //MainPage = new TestBMICalculator();
 
         //================= Test Navigation 2
-        MainPage = new NavigationPage(new TestLoginPageNav());
+        //MainPage = new NavigationPage(new TestLoginPageNav());
+
+        //================= Test Styling
+        MainPage = new NavigationPage(new TestStyle());
     }
 }

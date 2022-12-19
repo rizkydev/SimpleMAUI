@@ -381,4 +381,11 @@
         <Setter Property="SelectedTabColor" Value="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource Gray200}}" />
     </Style>
 
+    <Style TargetType="Button" x:Key="stlGlobalButton">
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource White}}"/>
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize" Value="Subtitle"/>
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Blue100Accent}, Dark={StaticResource White}}"/>
+    </Style>
+
 </ResourceDictionary>

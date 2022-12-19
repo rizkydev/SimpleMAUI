@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RizkyApps.TestStyle"
+             Title="TestStyle">
+
+    <ContentPage.Resources>
+        <Color x:Key="txtColor">#323031</Color>
+        <Color x:Key="txtColor2">#3E8EED</Color>
+        <!--Contoh apply semua by typenya. Stackbase merupakan bagian dari VerticalStackLayout
+        Cara cek nya f12 di method VerticalStackLayout c# nya -->
+        <Style TargetType="StackBase"
+               ApplyToDerivedTypes="True">
+            <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="Padding" Value="10, 0"/>
+            <Setter Property="Spacing" Value="25"/>
+            <Setter Property="BackgroundColor" Value="LightGreen"/>            
+        </Style>
+        <!--<Style TargetType="VerticalStackLayout">
+            <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="Padding" Value="30, 0"/>
+            <Setter Property="Spacing" Value="25"/>
+        </Style>-->
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource txtColor}"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="FontSize" Value="Large"/>
+            <Setter Property="TextColor" Value="Cyan"/>
+        </Style>
+        <Style TargetType="Button" x:Key="stlButton">
+            <Setter Property="BackgroundColor" Value="{StaticResource txtColor}"/>
+            <Setter Property="FontAttributes" Value="Italic" />
+            <Setter Property="FontSize" Value="Small"/>
+            <Setter Property="TextColor" Value="Pink"/>
+        </Style>
+        <Style TargetType="Button" x:Key="stlSecondButton" BasedOn="{StaticResource stlButton}">
+            <Setter Property="BackgroundColor" Value="{StaticResource txtColor2}"/>
+            <Setter Property="FontSize" Value="Large"/>
+        </Style>
+        <Style TargetType="Button" Class="stlClassButton1">
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource DarkSlateBlue}, Dark={StaticResource White}}"/>
+            <Setter Property="FontSize" Value="Large"/>
+        </Style>
+        <Style TargetType="Button" Class="stlClassButton2">
+            <Setter Property="FontAttributes" Value="Italic" />
+            <Setter Property="TextColor" Value="Chocolate"/>
+        </Style>
+    </ContentPage.Resources>
+    <ScrollView>
+        <VerticalStackLayout>
+            <Button
+                x:Name="btn1"
+                Text="Tombol 1"
+                HorizontalOptions="Center" />
+            <Button
+                x:Name="btn2"
+                Text="Tombol 2"
+                TextColor ="CadetBlue"
+                HorizontalOptions="Center" />
+            <Button
+                Style="{StaticResource stlButton}"
+                x:Name="btn3"
+                Text="Tombol 3"
+                HorizontalOptions="Center" />
+            <!--Ambil resource global dari lokasi yang diset didalam ResourceDictionary App.xaml-->
+            <Button
+                Style="{StaticResource stlGlobalButton}"
+                x:Name="btn4"
+                Text="Tombol 4"
+                HorizontalOptions="Center" />
+            <Button
+                Style="{StaticResource stlSecondButton}"
+                x:Name="btn5"
+                Text="Tombol 5"
+                HorizontalOptions="Center" />
+            <Button
+                Style="{StaticResource stlGlobalButtonNew}"
+                x:Name="btn6"
+                Text="Tombol 6"
+                HorizontalOptions="Center" />
+            <Button
+                Style="{DynamicResource stlDynamic}"
+                x:Name="btn7"
+                Text="Berubah Style"
+                Clicked="btn7_Clicked"
+                HorizontalOptions="Center" />
+            <Button
+                StyleClass="stlClassButton1, stlClassButton2"
+                x:Name="btn8"
+                Text="Class Merge"
+                HorizontalOptions="Center" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
